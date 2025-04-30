@@ -1,0 +1,51 @@
+let horasTrabajadas = prompt('Indica las horas a laborar o laboradas:'); 
+let precioPorHora = prompt ('Indica el precio por hora a cobrar en MXN'); 
+let ivaASumar = prompt('Indica el porcentaje de IVA a añadir (ejemplo: 20, 16, 10)'); 
+
+
+
+function calculoSubtotalSinIVA () {
+    let totalAcomulado = 0;
+	totalAcomulado = parseInt(horasTrabajadas) * parseFloat(precioPorHora);
+    
+    return totalAcomulado;
+}
+
+function calculoIVASobreSubtotal () {
+	return (parseFloat(ivaASumar)/100) * calculoSubtotalSinIVA();
+}
+
+function subtotalConIVA (){
+    return calculoSubtotalSinIVA() + calculoIVASobreSubtotal(); 
+}
+
+function calculoRetencionIVA () {
+    return (2/3) * calculoIVASobreSubtotal();
+}
+
+function calculoRetencionISR () {
+    return (0.1 * calculoSubtotalSinIVA());
+}
+
+function totalDeRecibo () {
+    return parseFloat((subtotalConIVA() - calculoRetencionIVA() - calculoRetencionISR()));
+}
+
+function mostrarDesglose () {
+    alert(
+    `Cantidad de horas laboradas: ${horasTrabajadas} hrs.\n 
+    Precio en MXN por hora laborada: $ ${precioPorHora} MXN.\n 
+    IVA aoplicado: ${ivaASumar} %. \n 
+    Subtotal sin IVA en: $ ${calculoSubtotalSinIVA().toFixed(2)} MXN.\n 
+    IVA sobre subtotal:  + $ ${calculoIVASobreSubtotal().toFixed(2)} MXN.\n 
+    Subtotal con IVA: $ ${subtotalConIVA().toFixed(2)} MXN.\n
+    Retención de IVA:  - $ ${calculoRetencionIVA().toFixed(2)} MXN.\n
+    Retención de ISR:  - $ ${calculoRetencionISR().toFixed(2)} MXN.\n
+    El Generation Develoment generó un total de : $ ${totalDeRecibo().toFixed(2)} MXN`
+        
+    );
+}
+
+
+
+mostrarDesglose();
