@@ -1,4 +1,31 @@
+/* Este es un comentario en CSS */
 
-*{
-    background-color: rgb(120, 197, 228);
+h1{  /* Selector de tipo o elemento: Selecciona los elementos con ese nombre */
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
 }
+
+p{
+    color:blue;
+}
+
+/* Selector de clase: Las clases si se comparten, se utilizan para agrupar */
+.terminos-a-definir{
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 40px;
+    background-color: burlywood;
+}
+
+/* Selectores de ID: Selecciona un elemento especifico y NO se comparte con otros elmentos */
+#parrafo-inicial{
+    background-color: darkseagreen;
+    font-size: 60px;
+}
+
+#snoppy{
+    width: 300px;
+    height:300px;
+    border-radius: 50%;
+}
+
+
