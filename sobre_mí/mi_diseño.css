@@ -115,7 +115,7 @@ ol li{
 }
 
 body{
-    background: url(/sobre_mí/imagenes/fondo_nubes.jpg);
+    background: url(/sobre_mí/fondo_nubes.jpg);
     background-size: cover;
     background-attachment: fixed;
 }
