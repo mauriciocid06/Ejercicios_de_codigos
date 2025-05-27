@@ -1,0 +1,22 @@
+*{  /* Resetear estilos por defecto del navegador */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Incluir el padding y el borde dentro del ancho y alto del elemento*/
+    
+}
+
+.rubik-burned-regular {
+    font-family: "Rubik Burned", system-ui;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  h1{
+    font-family: "Rubik Burned", system-ui;
+  }
+
+  .tarjeta-blanda{
+    background-color: darkmagenta; /* Fondo de color magenta */
+    border: 5px solid black;
+    
+  }

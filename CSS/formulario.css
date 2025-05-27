@@ -1,0 +1,43 @@
+/* Resetear*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Declaracion de variables para reutilizar colores */
+:root{
+    --color_fondo: #FAB2EA;
+    --color_acento: #D0FEF5;
+    --color_botones: #830a48;
+    --color_texto: black;
+    --fuente_principal: "Arial", serif;
+    --padding_tarjetas: 5px;
+}
+
+body{
+    background-color: var(--color_fondo);
+}
+
+form{
+    text-align: center; /* Alinear el contenido del elemento, no
+    alinea el bloque en si mismo */
+}
+
+button{
+    display: block;
+    width: 200px;
+    margin: 20px auto;
+}
+
+nav ul {
+    display: flex; /* Se convierte en un contenedor visible */
+    justify-content: space-between; /* Distribuye*/
+    list-style-type: none; /* Borra los estilos de bullet point de mi lista
+    desordenada */
+    padding: 10px 40px;
+  }
+
+  .elemento-navegacion a{
+    text-decoration: none;
+  }

@@ -1,0 +1,26 @@
+
+h1{
+    color: royalblue;
+    font-family: ;
+}
+
+.principal-title{ /* Valor de especifidad: 010 */
+    color: purple;
+}
+
+/* Valor de 1: Selectores de tipo/elemento y pseudoelementos  */
+
+h1.principal-title{ /* Suma de  */
+    color: crimson;
+    /* font-family: Arial, Helvetica, sans-serif; */
+}
+
+
+#title{ /* Valor de especifidad: 100 */
+    color: #383c;
+}
+
+h1{
+    color: seagreen;
+    color: brown;
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/CSS/formulario.css">
+    <title> Contacto </title>
+</head>
+<body>
+    <form action="", method="post">
+        <h1> ¡Contactanos! </h1>
+        <nav>
+            <ul>
+              <li class="elemento navegacion"><a href="/identificacion_de_errores_1.html">Page 1</a></li>
+              <li class="elemento navegacion"><a href="/index.html">Page 2</a></li>
+              <li class="elemento navegacion"><a href="/HTML/cascada.html" target="blank">Page 3 is longer</a></li>
+              <li class="elemento navegacion"><a href="/HTML/formulario.html">Page 4</a></li>
+            </ul>
+          </nav>
+        <fieldset> <!-- Agrupación por campos -->
+            <legend>Datos básicos del usuario</legend>
+            <label for=""> Nombre: </label>
+            <input type="text" placeholder="Nancy" required>
+            <label for=""> Apellido Paterno: </label>
+            <input type="text" placeholder="Moreno" required>
+            <label for="">Apellido Materno:</label>
+            <input type="text" placeholder="Ramírez" required>
+          </fieldset>
+        <fieldset>
+            <legend> Datos de contacto </legend>
+            Correo electronico: <input type="email" placeholder="cid.cruz.mauricio@gmail.com" required>
+            <br>
+            Telefono: <input type="tel" required>
+        </fieldset>
+        <fieldset>
+            <legend> Datos del pedido </legend>
+            <p> Nota: El número mínimo para generar un pedido por este medio es de 20 piezas y maximo de 500 piezas.
+                ¡Gracias por tu comprension! </p>
+            Número de Tamales: <input type="number" min="20" max="500">
+            <br>
+            Fecha de entrega: <input type="date">
+        </fieldset>
+        <fieldset>
+            <legend> Datos del envio </legend>
+                   <label for="recoger en sucursal">
+                   <input id="recoger en sucursal" type="radio" name="tipo de envio"> Recoger en sucursal </label>
+
+                   <label for="Envio a Domicilio">
+                   <input id="Envio a Domicilio" type="radio" name="tipo de envio"> Envio a Domicilio </label>
+
+                   <label for="Delivery">
+                   <input id="Delivery" type="radio" name="tipo de envio"> Delivery </label>
+
+                   <label for="Punto Medio">
+                   <input id="Punto Medio" type="radio" name="tipo de envio"> Punto Medio </label>
+
+                   <br>
+
+                   <select name="entregas-punto-medio">
+                    <option value="metro-apatlaco"> Metro Apatlaco </option>
+                    <option value="cablebus-santa-martha"> Cablebus Santa Martha </option>
+                    <option value="palacio-municipal-de-neza"> Palacio Municipal de Neza </option>
+                    <option value="faro-de-oriente"> Faro de Oriente </option>
+                    <option value="metro-insurgentes"> Metro Insurgentes </option>
+                    <option value="metrobus-tepalcates"> Metrobus Tepalcates </option>
+                    <option value="centro-de-texcoco"> Centro de Texcoco </option>
+                    <option value=""> FES Zaragoza </option>
+                    <option value=""> Estela de Luz </option>
+                    <option value=""> Coyoacan </option>
+                    <option value=""> Metro Oceania </option>
+                    <option value=""> Museo Yancuic </option>
+                   </select>
+
+                   <br>
+
+                   <datalist>
+                    
+                   </datalist>
+        </fieldset>
+
+    </form> <!-- Post para enviar informacion en el cuerpo de la solicitud y get para obtenerla en la url -->
+</body>
+</html>
