@@ -1,25 +1,32 @@
-// Tenemos un li de productos
+  // Arreglo de productos con sus propiedades
+const productos = [  // Se creo una carpeta para colocar las imagenes juntas y se cambio la direccion
+  {nombre: "Zapato negro", tipo: "zapato", color: "negro", img: "./imagenes/taco-negro.jpg"},
+  {nombre: "Zapato azul", tipo: "zapato", color: "azul", img: "./imagenes/taco-azul.jpg"},
+  {nombre: "Bota negra", tipo: "bota", color: "negro", img: "./imagenes/bota-negra.jpg"},
+  {nombre: "Bota azul", tipo: "bota", color: "azul", img: "./imagenes/bota-azul.jpg"},
+  {nombre: "Zapato rojo", tipo: "zapato", color: "rojo", img: "./imagenes/zapato-rojo.jpg"}
+];
 
-const productos = [
-  {nombre: "Zapato negro", tipo: "zapato", color: "negro", img: "./taco-negro.jpg"},
-  {nombre: "Zapato azul", tipo: "zapato", color: "azul", img: "./taco-azul.jpg"},
-  {nombre: "Bota negra", tipo: "bota", color: "negro", img: "./bota-negra.jpg"},
-  {nombre: "Bota azul", tipo: "bota", color: "azul", img: "./bota-azul.jpg"},
-  {nombre: "Zapato rojo", tipo: "zapato", color: "rojo", img: "./zapato-rojo.jpg"}
-]
-
-const listaDeProductos = document.getElementsByName("lista-de-productos");
-const li = document.querySelector('.input');
+  // Se corrigen varias cosas
+  /* 
+   *  las variables var se cambian por const
+   *  Se corrige .getElementByName por .getElementById
+   *  La variable li se cambio por listaDeDocumentos
+   *  la variable $i se corrige por li
+   *  Se elimina el . en const li = document.querySelector('.input');
+   */
+const listaDeProductos = document.getElementById("lista-de-productos");  
+const li = document.querySelector('input'); 
 
 for (let i = 0; i < productos.length; i++) {
-  var d = document.createElement("div");
+  const d = document.createElement("div");
   d.classList.add("producto");
 
-  var ti = document.createElement("p");
+  const ti = document.createElement("p");
   ti.classList.add("titulo");
   ti.textContent = productos[i].nombre;
   
-  var imagen = document.createElement("img");
+  const imagen = document.createElement("img");
   imagen.setAttribute('src', productos[i].img);
 
   d.appendChild(ti);
@@ -28,27 +35,25 @@ for (let i = 0; i < productos.length; i++) {
   listaDeProductos.appendChild(d);
 }
 
-displayProductos(productos);
-const botonDeFiltro = document.querySelector("button");
+const botonDeFiltro = document.querySelector("button");  // Se agrega la variable botonDeFiltro
 
 botonDeFiltro.onclick = function() {
   while (listaDeProductos.firstChild) {
     listaDeProductos.removeChild(listaDeProductos.firstChild);
   }
 
-  const texto = li.value;
-  console.log(texto);
-  const productosFiltrados = filtrado(productos, texto );
+  const texto = li.value.toLowerCase();  // Se cambia y corrige $i.value por li.value.toLowerCase()
+  const productosFiltrados = filtrado(productos, texto);  // Se agrega la variable productosFiltrados
 
   for (let i = 0; i < productosFiltrados.length; i++) {
-    var d = document.createElement("div");
+    const d = document.createElement("div");
     d.classList.add("producto");
   
-    var ti = document.createElement("p");
+    const ti = document.createElement("p");
     ti.classList.add("titulo");
     ti.textContent = productosFiltrados[i].nombre;
     
-    var imagen = document.createElement("img");
+    const imagen = document.createElement("img");
     imagen.setAttribute('src', productosFiltrados[i].img);
   
     d.appendChild(ti);
@@ -56,8 +61,10 @@ botonDeFiltro.onclick = function() {
   
     listaDeProductos.appendChild(d);
   }
-}
+};
 
+  // Se agrega toLowerCase() para convertir el texto a minúsculas y así hacer que la comparación sea insensible a mayúsculas o minúsculas.
 const filtrado = (productos = [], texto) => {
-  return productos.filter(item => item.tipo.includes(texto) || item.color.includes(texto));
-}  
+  return productos.filter(item => item.tipo.toLowerCase().includes(texto) || item.color.toLowerCase().includes(texto)
+  );
+};
